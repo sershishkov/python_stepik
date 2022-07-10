@@ -257,16 +257,16 @@
 # Разбиение на чанки 🌶️
 # На вход программе подаются две строки, на одной символы, на другой число nn. Из первой строки формируется список.Реализуйте функцию chunked(), которая принимает на вход список и число, задающее размер чанка(куска), а возвращает список из чанков указанной длины.
 
-def chunked(sentence, chunk_length):
-    sentence = sentence.split()
-    new_list = []
-    j = 0
-    for i in range(0, len(sentence), chunk_length):
-        new_list.append([sentence[i]])
-        new_list[j].extend(sentence[i+1:i+chunk_length])
-        j += 1
+# def chunked(sentence, chunk_length):
+#     sentence = sentence.split()
+#     new_list = []
+#     j = 0
+#     for i in range(0, len(sentence), chunk_length):
+#         new_list.append([sentence[i]])
+#         new_list[j].extend(sentence[i+1:i+chunk_length])
+#         j += 1
 
-    return new_list
+#     return new_list
 
 
 # sentence = input()
