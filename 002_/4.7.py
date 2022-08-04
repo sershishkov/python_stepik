@@ -137,9 +137,41 @@
 
 ######################################################
 # 11 #########################
+# Возведение матрицы в степень 🌶️
+# На вход программе подаётся натуральное число n — количество строк и столбцов в матрице, затем элементы матрицы, затем натуральное число m.
 #
-#
-#
+
+def mult_matrix(matrix_A, matrix_B):
+    matrix_result = []
+    for i in range(len(matrix_A)):
+        matrix_result.append([0]*len(matrix_B[0]))
+
+    # iterate through rows of matrix_A
+    for i in range(len(matrix_A)):
+        # iterate through columns of matrix_B
+        for j in range(len(matrix_B[0])):
+            # iterate through rows of matrix_B
+            for k in range(len(matrix_B)):
+                matrix_result[i][j] += matrix_A[i][k] * matrix_B[k][j]
+    return matrix_result
+
+
+matrix_A = []
+matrix_C = []
+n = int(input())
+
+for i in range(n):
+    row = [int(item) for item in input().split()]
+    matrix_A.append(row)
+    matrix_C.append(row)
+
+stepen = int(input())
+
+for i in range(stepen-1):
+    matrix_C = mult_matrix(matrix_C, matrix_A)
+
+for i in range(n):
+    print(*matrix_C[i])
 
 
 ######################################################
